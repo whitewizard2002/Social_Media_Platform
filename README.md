@@ -7,8 +7,9 @@ Visual Studio code - overall programming of the project
 PopSQL - for management of SQL Queries
 
 ### Frameworks
-
+---
 #### For Frontend
+---
 React Router
 
 Ant Design
@@ -25,6 +26,7 @@ Redux
 
 
 #### For Backend
+---
 Express Js
 
 Hapi Js
