@@ -8,29 +8,29 @@ PopSQL - for management of SQL Queries
 
 ### Frameworks
 ***
-#### For Frontend
----
-React Router
+  #### For Frontend
+  ---
+  React Router
+  
+  Ant Design
+  
+  Styled Components
+  
+  Jest
+  
+  React Testing Library
+  
+  React Admin
+  
+  Redux
 
-Ant Design
 
-Styled Components
-
-Jest
-
-React Testing Library
-
-React Admin
-
-Redux
-
-
-#### For Backend
----
-Express Js
-
-Hapi Js
-
-Sails Js
-
-LoopBack
+  #### For Backend
+  ---
+  Express Js
+  
+  Hapi Js
+  
+  Sails Js
+  
+  LoopBack
