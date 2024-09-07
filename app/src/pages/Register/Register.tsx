@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
-
+import axios from "axios";
 
 interface RegisterProps{
 }
@@ -14,6 +14,7 @@ export const Register:React.FunctionComponent = (props:RegisterProps) => {
         username:'',
         password:'',
     });
+    const navigate = useNavigate();
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
         SetInput({
@@ -22,25 +23,39 @@ export const Register:React.FunctionComponent = (props:RegisterProps) => {
         });
     }
 
-    const handleSubmit = ():void => {
-        console.log("Username:", input.username, "Password: ", input.password);
+    const handleSubmit = async () => {
+        console.log("First Name: ",input.firstname, "Last Name:", input.lastname, "Email:", input.email, "Username:",input.username, "Password:", input.password);
+        try{
+            const response = await axios.post('http://localhost:5000/api/register', {
+                    firstname: input.firstname,
+                    lastname: input.lastname,
+                    email: input.email,
+                    username: input.username,
+                    password: input.password,
+            });
+            console.log(response);
+            navigate('/');
+        }catch(error){
+            console.log("Error: ",error);
+        }
+
     }
 
     return <Wrapper>
         <RegisterForm>
             <Row>
                 <FieldName>First Name</FieldName>
-                <FieldInput type='text' name='firstname' onChange={handleChange} value={input.username}/>
+                <FieldInput type='text' name='firstname' onChange={handleChange} value={input.firstname}/>
             </Row>
 
             <Row>
                 <FieldName>Last Name</FieldName>
-                <FieldInput type='text' name='lastname' onChange={handleChange} value={input.username}/>
+                <FieldInput type='text' name='lastname' onChange={handleChange} value={input.lastname}/>
             </Row>
 
             <Row>
                 <FieldName>Email Address</FieldName>
-                <FieldInput type='email' name='email' onChange={handleChange} value={input.username}/>
+                <FieldInput type='email' name='email' onChange={handleChange} value={input.email}/>
             </Row>
 
             <Row>
