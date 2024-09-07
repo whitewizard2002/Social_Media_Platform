@@ -14,6 +14,7 @@ export const Login:React.FunctionComponent = (props:LoginProps) => {
     
     const handleSubmit = ():void => {
         console.log("Username:", input.username, "Password: ", input.password);
+        
     }
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
